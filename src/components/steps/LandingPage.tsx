@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  ArrowRight,
-  Zap,
-  RefreshCw,
-  Link2,
-  CheckCircle,
-  GitBranch,
-} from "lucide-react";
+import { ArrowRight, Zap, RefreshCw, Link2, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signIn } from "next-auth/react";
 

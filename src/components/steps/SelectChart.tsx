@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MermaidBlock } from "@/app/api/charts/route";
+import { Alert } from "../ui/alert";
 
 interface ChartSelectionStepProps {
   onSelect: (chart: MermaidBlock) => Promise<string | void>;
@@ -62,6 +63,12 @@ export default function SelectChart({
         <p className="text-gray-500 mb-12">
           Found {blocks.length} Mermaid charts in your page
         </p>
+
+        {error && (
+          <Alert variant="destructive" className="mb-4">
+            <div className="text-sm">{error}</div>
+          </Alert>
+        )}
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
           {blocks.map((chart) => (

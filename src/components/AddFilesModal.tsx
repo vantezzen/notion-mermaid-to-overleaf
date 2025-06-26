@@ -1,16 +1,6 @@
 "use client";
 
-import {
-  X,
-  FileText,
-  Upload,
-  FolderOpen,
-  Globe,
-  FileImage,
-  BookOpen,
-  Zap,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { FileText, Upload, Globe } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 export default function AddFilesModal({
