@@ -20,5 +20,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       session.access_token = token.access_token as string;
       return session;
     },
+    async redirect({ url }) {
+      return url;
+    },
   },
 });
