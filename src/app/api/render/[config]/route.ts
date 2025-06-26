@@ -6,9 +6,9 @@ import Pako from "pako";
 
 export async function GET(
   req: Request,
-  { params }: { params: { config: string } }
+  { params }: { params: Promise<{ config: string }> }
 ) {
-  const encryptedConfig = params.config;
+  const { config: encryptedConfig } = await params;
 
   if (!encryptedConfig) {
     return NextResponse.json(

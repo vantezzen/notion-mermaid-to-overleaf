@@ -4,14 +4,15 @@ import pako from "pako";
 
 export async function GET(
   req: Request,
-  { params }: { params: { block: string } }
+  { params }: { params: Promise<{ block: string }> }
 ) {
   const session = await auth();
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+  const { block } = await params;
 
-  const data = Buffer.from(params.block, "utf8");
+  const data = Buffer.from(block, "utf8");
   const compressed = pako.deflate(data, { level: 9 });
   const result = Buffer.from(compressed)
     .toString("base64")
