@@ -3,6 +3,7 @@
 import { ArrowRight, Zap, RefreshCw, Link2, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signIn } from "next-auth/react";
+import Faq from "../Faq";
 
 export default function LandingPage() {
   return (
@@ -234,6 +235,8 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
+
+      <Faq />
 
       {/* CTA Section */}
       <div className="py-24 bg-gradient-to-r from-gray-900 to-gray-800">
